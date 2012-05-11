@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TaskPanel</class>
+ <widget class="QWidget" name="TaskPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>545</width>
+    <height>1315</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Profile Milling Operation</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="7" column="0">
+    <widget class="QComboBox" name="comboBoxToolSelect">
+     <property name="minimumSize">
+      <size>
+       <width>250</width>
+       <height>0</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Tool 1 (.5&quot; Carbide 4 Flute EM)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tool 2 (.375&quot; HSS 2 Flute EM)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tool 3 (.125&quot; HSS C'Drill)</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="23" column="0">
+    <widget class="QComboBox" name="comboBoxCutMode">
+     <property name="toolTip">
+      <string>Climb or Convential cut</string>
+     </property>
+     <property name="statusTip">
+      <string>Climb or Convential cut</string>
+     </property>
+     <property name="maxVisibleItems">
+      <number>3</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>Climb</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Conventional</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="20" column="0">
+    <widget class="QComboBox" name="comboBoxToolSide">
+     <property name="toolTip">
+      <string>Side of profile that tool will be on</string>
+     </property>
+     <property name="statusTip">
+      <string>Side of profile that tool will be on</string>
+     </property>
+     <property name="editable">
+      <bool>false</bool>
+     </property>
+     <property name="maxVisibleItems">
+      <number>2</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>left</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>right</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>on</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="24" column="0">
+    <widget class="QLabel" name="label">
+     <property name="maximumSize">
+      <size>
+       <width>90</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Curves</string>
+     </property>
+    </widget>
+   </item>
+   <item row="38" column="0">
+    <widget class="QPushButton" name="pushButtonAddCurves">
+     <property name="maximumSize">
+      <size>
+       <width>90</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="40" column="1">
+    <widget class="QPushButton" name="pushButtonPointReset">
+     <property name="text">
+      <string>Reset Points</string>
+     </property>
+    </widget>
+   </item>
+   <item row="43" column="1">
+    <widget class="QPushButton" name="pushButtonStartPoint">
+     <property name="text">
+      <string>Start Point</string>
+     </property>
+    </widget>
+   </item>
+   <item row="23" column="1">
+    <widget class="QLabel" name="label_5">
+     <property name="maximumSize">
+      <size>
+       <width>90</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Cut Mode</string>
+     </property>
+    </widget>
+   </item>
+   <item row="20" column="1">
+    <widget class="QLabel" name="label_4">
+     <property name="maximumSize">
+      <size>
+       <width>90</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Tool On Side</string>
+     </property>
+    </widget>
+   </item>
+   <item row="40" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Start and End Points</string>
+     </property>
+    </widget>
+   </item>
+   <item row="43" column="0">
+    <widget class="QLineEdit" name="lineEditStartPoint">
+     <property name="frame">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="44" column="0">
+    <widget class="QLineEdit" name="lineEditEndPoint"/>
+   </item>
+   <item row="44" column="1">
+    <widget class="QPushButton" name="pushButtonEndPoint">
+     <property name="text">
+      <string>End Point</string>
+     </property>
+    </widget>
+   </item>
+   <item row="51" column="0">
+    <widget class="QCheckBox" name="checkBoxAutoRollOn">
+     <property name="text">
+      <string>Auto Roll On</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="51" column="1">
+    <widget class="QCheckBox" name="checkBoxAutoRollOff">
+     <property name="text">
+      <string>Auto Roll Off</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="56" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Roll On/Off Radius</string>
+     </property>
+    </widget>
+   </item>
+   <item row="56" column="1">
+    <widget class="QLineEdit" name="lineEditRollRadius"/>
+   </item>
+   <item row="58" column="0">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Lead In Length</string>
+     </property>
+    </widget>
+   </item>
+   <item row="58" column="1">
+    <widget class="QLineEdit" name="lineEditLeadIn"/>
+   </item>
+   <item row="59" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Lead out Length</string>
+     </property>
+    </widget>
+   </item>
+   <item row="59" column="1">
+    <widget class="QLineEdit" name="lineEditLeadOut"/>
+   </item>
+   <item row="47" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Extend Before Start</string>
+     </property>
+    </widget>
+   </item>
+   <item row="47" column="1">
+    <widget class="QLineEdit" name="lineEditExtendStart"/>
+   </item>
+   <item row="49" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Extend After End</string>
+     </property>
+    </widget>
+   </item>
+   <item row="49" column="1">
+    <widget class="QLineEdit" name="lineEditExtendEnd"/>
+   </item>
+   <item row="60" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Extra Offset </string>
+     </property>
+    </widget>
+   </item>
+   <item row="60" column="1">
+    <widget class="QLineEdit" name="lineEditExtraOffset"/>
+   </item>
+   <item row="62" column="0">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>ABS/INCREMENTAL Mode</string>
+     </property>
+    </widget>
+   </item>
+   <item row="61" column="1">
+    <widget class="QCheckBox" name="checkBox_3">
+     <property name="text">
+      <string>Do Finishing Pass</string>
+     </property>
+    </widget>
+   </item>
+   <item row="62" column="1">
+    <widget class="QComboBox" name="comboBoxAbsInc">
+     <item>
+      <property name="text">
+       <string>Absolute</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Incremental</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="63" column="0">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Clearance Height</string>
+     </property>
+    </widget>
+   </item>
+   <item row="63" column="1">
+    <widget class="QLineEdit" name="lineEditClearanceHt"/>
+   </item>
+   <item row="64" column="0">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>Rapid Safety Space</string>
+     </property>
+    </widget>
+   </item>
+   <item row="64" column="1">
+    <widget class="QLineEdit" name="lineEditSafetySpace"/>
+   </item>
+   <item row="65" column="0">
+    <widget class="QLabel" name="label_15">
+     <property name="text">
+      <string>Start Depth</string>
+     </property>
+    </widget>
+   </item>
+   <item row="65" column="1">
+    <widget class="QLineEdit" name="lineEditStartDepth"/>
+   </item>
+   <item row="66" column="0">
+    <widget class="QLabel" name="label_16">
+     <property name="text">
+      <string>Final Depth</string>
+     </property>
+    </widget>
+   </item>
+   <item row="66" column="1">
+    <widget class="QLineEdit" name="lineEditFinalDepth"/>
+   </item>
+   <item row="67" column="0">
+    <widget class="QLabel" name="label_17">
+     <property name="text">
+      <string>Step Down</string>
+     </property>
+    </widget>
+   </item>
+   <item row="67" column="1">
+    <widget class="QLineEdit" name="lineEditStepDown"/>
+   </item>
+   <item row="68" column="0">
+    <widget class="QLabel" name="label_18">
+     <property name="text">
+      <string>Feedrate- Horizontal</string>
+     </property>
+    </widget>
+   </item>
+   <item row="68" column="1">
+    <widget class="QLineEdit" name="lineEditHorizFeed"/>
+   </item>
+   <item row="69" column="0">
+    <widget class="QLabel" name="label_19">
+     <property name="text">
+      <string>Feedrate-Verticle</string>
+     </property>
+    </widget>
+   </item>
+   <item row="69" column="1">
+    <widget class="QLineEdit" name="lineEditVerticalFeed"/>
+   </item>
+   <item row="70" column="0">
+    <widget class="QLabel" name="label_20">
+     <property name="text">
+      <string>Spindle Speed</string>
+     </property>
+    </widget>
+   </item>
+   <item row="70" column="1">
+    <widget class="QLineEdit" name="lineEditSpindleSpeed"/>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLabel" name="label_21">
+     <property name="text">
+      <string>Tool Number</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QComboBox" name="comboBoxFixtureOffsets">
+     <item>
+      <property name="text">
+       <string>G54</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G55</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G56</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G57</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G58</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59.1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59.2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59.3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59.4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59.5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59.6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59.7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59.8</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G59.9</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label_22">
+     <property name="text">
+      <string>Fixture Offset</string>
+     </property>
+    </widget>
+   </item>
+   <item row="71" column="0">
+    <widget class="QLabel" name="label_23">
+     <property name="text">
+      <string>Comments in Footer</string>
+     </property>
+    </widget>
+   </item>
+   <item row="72" column="0" colspan="2">
+    <widget class="QTextEdit" name="textEditFooterComments"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_24">
+     <property name="text">
+      <string>Comments in Header</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QTextEdit" name="textEditHeaderComments"/>
+   </item>
+   <item row="73" column="1">
+    <widget class="QPushButton" name="pushButtonPostToFile">
+     <property name="text">
+      <string>Post G-Code</string>
+     </property>
+    </widget>
+   </item>
+   <item row="25" column="0" colspan="2">
+    <widget class="QTextEdit" name="textEditCurve"/>
+   </item>
+   <item row="24" column="1">
+    <widget class="QPushButton" name="pushButtonReset">
+     <property name="text">
+      <string>Reset Curves</string>
+     </property>
+    </widget>
+   </item>
+   <item row="38" column="1">
+    <widget class="QPushButton" name="pushButtonReverse">
+     <property name="text">
+      <string>Reverse Path</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_25">
+     <property name="text">
+      <string>Tool Diameter</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1">
+    <widget class="QLineEdit" name="lineEditToolDaimeter">
+     <property name="maximumSize">
+      <size>
+       <width>200</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
