@@ -1,6 +1,6 @@
 #***************************************************************************
 #*                                                                         *
-#*   Copyright (c) 2012 Daniel Falck <ddfalck@gmail.com>                   *  
+#*   Copyright (c) 2012 Daniel Falck  <ddfalck@gmail.com>                  *  
 #*                                                                         *
 #*   This program is free software; you can redistribute it and/or modify  *
 #*   it under the terms of the GNU Lesser General Public License (LGPL)    *
@@ -24,7 +24,7 @@ import os
 import time
 import math
 from utils import Paths
-from draftlibs import fcvec,fcgeo
+from DraftGeomUtils import sortEdges, findMidpoint
 from FreeCAD import Vector,Base,Part
 import FreeCADGui
 import FreeCAD
@@ -391,7 +391,7 @@ metric()
 
 
         sorted_edges = []
-        sorted_edges = fcgeo.sortEdges(edges)
+        sorted_edges = sortEdges(edges)
         #item += '#another test after sorted_edges \n'
         def isSameVertex(V1, V2):#borrowed from yorik's fcgeo.py- thanks yorik!
             ''' Test if vertexes have same coordinates with precision 10E(-precision)'''
@@ -419,7 +419,7 @@ metric()
         for s in sorted_edges:
             #edges.append(s)
             if (isinstance(s.Curve,Part.Circle)):
-                mp = fcgeo.findMidpoint(s)
+                mp = findMidpoint(s)
                 ce = s.Curve.Center
                 tang1 = s.Curve.tangent(s.ParameterRange[0]) ; tang2 = s.Curve.tangent(s.ParameterRange[1])
                 cross1 = Vector.cross(Base.Vector(tang1[0][0],tang1[0][1],tang1[0][2]),Base.Vector(tang2[0][0],tang2[0][1],tang2[0][2]))
